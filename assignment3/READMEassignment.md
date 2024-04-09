@@ -49,9 +49,9 @@ kubectl apply -f app-2-ingress.yaml
 
 ## Verification
 
-Verify Nginx
+Verify:
 ```bash
-curl http://$(minikube ip)
+curl http://$(minikube ip)/app
 ```
 
 Expected output:
@@ -59,6 +59,12 @@ Expected output:
 Hello World from [app-1-dep-<Some-Characters>]
 Hello World from [app-2-dep-<Some-Characters>]
 ```
+
+Output will change between the two apps.
+
+example:
+
+![app-1](output.png)
 
 ## Clean Up
 1. Delete all deployments
