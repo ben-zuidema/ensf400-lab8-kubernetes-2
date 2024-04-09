@@ -4,14 +4,16 @@ metadata:
   name: app-1-ingress
   labels:
     app: app-1
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
-      paths:
-      - path: /app
-        pathType: Prefix
-        backend:
-          service:
-            name: app-1-svc
-            port:
-              number: 8080
+    - http:
+        paths:
+          - path: /app
+            pathType: Prefix
+            backend:
+              service:
+                name: app-1-svc
+                port:
+                  number: 8080
