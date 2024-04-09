@@ -49,9 +49,9 @@ kubectl apply -f app-2-ingress.yaml
 
 ## Verification
 
-Verify:
+Verify Nginx is running:
 ```bash
-curl http://$(minikube ip)/app
+curl http://$(minikube ip)/
 ```
 
 Expected output:
@@ -61,6 +61,15 @@ Hello World from [app-2-dep-<Some-Characters>]
 ```
 
 Output will change between the two apps.
+
+example:
+
+![nginx](output2.png)
+
+Verify Canary:
+```bash
+curl http://$(minikube ip)/app
+```
 
 example:
 
